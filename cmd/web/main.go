@@ -24,11 +24,14 @@ func main() {
 
 	fileServer := http.FileServer(http.Dir("./ui/static/"))
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
-	// Use the http.ListenAndServe() function to start a new web server. We pas
-	//two parameters: the TCP network address to listen on (in this case ":400
-	//and the servemux we just created. If http.ListenAndServe() returns an er
-	//we use the log.Fatal() function to log the error message and exit.
+
+	srv := &http.Server{
+		Addr: *addr,
+		ErrorLog: errorLog,
+		Handler: mux,
+	}
+
 	infoLog.Printf("Starting server on %s", *addr)
-	err := http.ListenAndServe(*addr, mux)
+	err := srv.ListenAndServe()
 	errorLog.Fatal(err)
 }
