@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    tty: true
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_USER=root
+    volumes:
+      - ./.docker/mysql/dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
