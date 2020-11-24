@@ -15,7 +15,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	// Importantly, we then return from the handler. If we don't return the han
 	//would keep executing and also write the "Hello from SnippetBox" message.
 	if r.URL.Path != "/" {
-		http.NotFound(w, r)
+		app.notFound(w)
 		return
 	}
 
@@ -27,15 +27,13 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
-		app.errorLog.Println(err.Error())
-		http.Error(w, "Internal Server Error", 500)
+		app.serverError(w, err)
 		return
 	}
 
 	err = ts.Execute(w, nil)
 	if err != nil {
-		app.errorLog.Println(err.Error())
-		http.Error(w, "Internal Server Error", 500)
+		app.serverError(w, err)
 	}
 
 	w.Write([]byte("Hello from Snippetbox"))
@@ -45,8 +43,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(r.URL.Query().Get("id"))
 	if err != nil || id < 1 {
-		http.NotFound(w, r)
-		return
+		app.notFound(w)
 	}
 
 	fmt.Fprintf(w, "Display a specific snipped with ID %d...", id)
@@ -58,7 +55,8 @@ func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Allow", "POST")
 		//w.WriteHeader(405)
 		//w.Write([]byte("Method Not Allowed"))
-		http.Error(w, "Method Not Allowed", 405) // It substitutes the w.WriteHeader and w.Write
+		//http.Error(w, "Method Not Allowed", 405) // It substitutes the w.WriteHeader and w.Write
+		app.clientError(w, http.StatusMethodNotAllowed)
 		return
 	}
 
