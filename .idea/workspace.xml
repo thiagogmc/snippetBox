@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5b48902-173a-40e2-b0f4-062a04d45f88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/web/routes.go" afterDir="false" />
+    <list default="true" id="c375edb4-fae7-42e3-9ddb-4b1d05338384" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/models/models.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/models/mysql/snippets.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/web/handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/handlers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,48 +23,33 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
-  <component name="ProjectId" id="1kZNadbXh9ZTKtlz0Zqbx3E38a1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1knuXGHE57kCJTGeKmWG3dXgWFb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ui/static" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="389" y="364" key="#Go_Modules" timestamp="1605906499322">
+    <state x="169" y="244" width="670" height="677" key="search.everywhere.popup" timestamp="1606434982919">
       <screen x="0" y="23" width="1920" height="1002" />
     </state>
-    <state x="389" y="364" key="#Go_Modules/1920.125.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1605906499322" />
-    <state x="270" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605979606219">
-      <screen x="0" y="23" width="1920" height="1002" />
-    </state>
-    <state x="270" y="333" key="#com.intellij.fileTypes.FileTypeChooser/1920.125.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1605979606219" />
+    <state x="169" y="244" width="670" height="676" key="search.everywhere.popup/1920.125.1440.877/0.23.1920.1001@0.23.1920.1001" timestamp="1606352613855" />
+    <state x="169" y="244" width="670" height="677" key="search.everywhere.popup/1920.125.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1606434982919" />
   </component>
 </project>

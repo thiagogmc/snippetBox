@@ -60,6 +60,15 @@ func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	title := "O snail"
+	content := "O snail \n Climb Mount fuji,\n But slowly, slowly! \n\n- Kobayashi"
+	expires := "7"
 
-	w.Write([]byte("Create a new snippet..."))
+	id, err := app.snippets.Insert(title, content, expires)
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
+	http.Redirect(w, r, fmt.Sprintf("/snippet?id=%d", id), http.StatusSeeOther)
 }
