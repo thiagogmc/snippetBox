@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/thiagogmc/snippetbox/pkg/models"
+	"html/template"
 	"net/http"
 	"strconv"
 )
@@ -41,7 +42,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	//	return
 	//}
 	//
-	//err = ts.Execute(w, nil)
+	//err = ts.Execute(w, s)
 	//if err != nil {
 	//	app.serverError(w, err)
 	//}
@@ -65,7 +66,24 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, "%v", s)
+	data := &templateData{Snippet: s}
+
+	files := []string {
+		"./ui/html/show.page.tmpl",
+		"./ui/html/base.layout.tmpl",
+		"./ui/html/footer.partial.tmpl",
+	}
+
+	ts, err := template.ParseFiles(files...)
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
+	err = ts.Execute(w, data)
+	if err != nil {
+		app.serverError(w, err)
+	}
 }
 
 // Add a createSnippet handler function.
