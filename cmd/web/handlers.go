@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/thiagogmc/snippetbox/pkg/models"
 	"html/template"
 	"net/http"
 	"strconv"
@@ -46,7 +47,16 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		app.notFound(w)
 	}
 
-	fmt.Fprintf(w, "Display a specific snipped with ID %d...", id)
+	s, err := app.snippets.Get(id)
+	if err == models.ErrNoRecord {
+		app.notFound(w)
+		return
+	} else if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
+	fmt.Fprintf(w, "%v", s)
 }
 
 // Add a createSnippet handler function.
