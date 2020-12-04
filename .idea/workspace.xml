@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c375edb4-fae7-42e3-9ddb-4b1d05338384" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/web/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/middleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/web/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/routes.go" afterDir="false" />
     </list>
