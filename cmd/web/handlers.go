@@ -45,9 +45,16 @@ func (app *application) createSnippetForm(w http.ResponseWriter, r *http.Request
 
 // Add a createSnippet handler function.
 func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
-	title := "O snail"
-	content := "O snail \n Climb Mount fuji,\n But slowly, slowly! \n\n- Kobayashi"
-	expires := "7"
+
+	err := r.ParseForm()
+	if err != nil {
+		app.clientError(w, http.StatusBadRequest)
+		return
+	}
+
+	title := r.PostForm.Get("title")
+	content := r.PostForm.Get("content")
+	expires := r.PostForm.Get("expires")
 
 	id, err := app.snippets.Insert(title, content, expires)
 	if err != nil {
