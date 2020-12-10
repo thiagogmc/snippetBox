@@ -48,6 +48,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="294" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1607620473202">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="294" y="237" key="#com.intellij.ide.util.MemberChooser/1920.125.1440.877/0.23.1920.1003@0.23.1920.1003" timestamp="1607620473202" />
     <state x="217" y="278" width="586" height="490" key="find.popup" timestamp="1607609725161">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
