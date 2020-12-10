@@ -1,19 +1,18 @@
 package main
 
 import (
+	"github.com/thiagogmc/snippetbox/pkg/forms"
 	"github.com/thiagogmc/snippetbox/pkg/models"
 	"html/template"
-	"net/url"
 	"path/filepath"
 	"time"
 )
 
 type templateData struct {
 	CurrentYear int
-	FormData url.Values
-	FormErrors map[string]string
-	Snippet *models.Snippet
-	Snippets []*models.Snippet
+	Form        *forms.Form
+	Snippet     *models.Snippet
+	Snippets    []*models.Snippet
 }
 
 var functions = template.FuncMap{
