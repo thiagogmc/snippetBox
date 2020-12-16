@@ -9,7 +9,7 @@ import "github.com/justinas/alice"
 func (app *application) routes() http.Handler {
 
 	standardMiddleware := alice.New(app.recoverPanic, app.logRequest, secureHeaders)
-	dynamicMiddleware := alice.New(app.session.Enable)
+	dynamicMiddleware := alice.New(app.session.Enable, noSurf)
 	// Use the http.NewServeMux() function to initialize a new servemux, then
 	//register the home function as the handler for the "/" URL pattern.
 	mux := pat.New()

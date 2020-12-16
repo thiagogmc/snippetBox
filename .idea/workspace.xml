@@ -8,9 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/web/helpers.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/helpers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/web/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/middleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/web/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/routes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/web/templates.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/templates.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/models/mysql/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/models/mysql/users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/html/base.layout.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/ui/html/base.layout.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/html/create.page.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/ui/html/create.page.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/html/login.page.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/ui/html/login.page.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/html/signup.page.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/ui/html/signup.page.tmpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +73,11 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state x="217" y="278" width="586" height="490" key="find.popup/1920.125.1440.877/0.23.1920.1003@0.23.1920.1003" timestamp="1607609725161" />
-    <state x="169" y="244" width="670" height="678" key="search.everywhere.popup" timestamp="1607980697664">
+    <state x="169" y="244" width="670" height="678" key="search.everywhere.popup" timestamp="1608070320401">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state x="169" y="244" width="670" height="676" key="search.everywhere.popup/1920.125.1440.877/0.23.1920.1001@0.23.1920.1001" timestamp="1606352613855" />
     <state x="169" y="244" width="670" height="677" key="search.everywhere.popup/1920.125.1440.877/0.23.1920.1002@0.23.1920.1002" timestamp="1606434982919" />
-    <state x="169" y="244" width="670" height="678" key="search.everywhere.popup/1920.125.1440.877/0.23.1920.1003@0.23.1920.1003" timestamp="1607980697664" />
+    <state x="169" y="244" width="670" height="678" key="search.everywhere.popup/1920.125.1440.877/0.23.1920.1003@0.23.1920.1003" timestamp="1608070320401" />
   </component>
 </project>
