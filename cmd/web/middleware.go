@@ -1,8 +1,10 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"github.com/justinas/nosurf"
+	"github.com/thiagogmc/snippetbox/pkg/models"
 	"net/http"
 )
 
@@ -37,7 +39,7 @@ func (app *application) recoverPanic(next http.Handler) http.Handler {
 
 func (app *application) requireAuthenticatedUser(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
-		if app.authenticatedUser(request) == 0 {
+		if app.authenticatedUser(request) == nil {
 			http.Redirect(writer, request, "/user/login", 302)
 			return
 		}
@@ -55,4 +57,27 @@ func noSurf(next http.Handler) http.Handler {
 	})
 
 	return csrfHandler
+}
+
+func (app *application) authenticate(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		exists := app.session.Exists(r, "userID")
+		if !exists {
+			next.ServeHTTP(w, r)
+			return
+		}
+
+		user, err := app.users.Get(app.session.GetInt(r,"userID"))
+		if err == models.ErrNoRecord {
+			app.session.Remove(r, "userID")
+			next.ServeHTTP(w, r)
+			return
+		} else if err != nil {
+			app.serverError(w, err)
+			return
+		}
+
+		ctx := context.WithValue(r.Context(), contextKeyUser, user)
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
 }
