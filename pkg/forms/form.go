@@ -51,7 +51,7 @@ func (f *Form) MinLength(field string, d int) {
 	}
 
 	if utf8.RuneCountInString(value) < d {
-		f.Errors.Add(field, fmt.Sprintf("This field is too short (minimun is %d).", d))
+		f.Errors.Add(field, fmt.Sprintf("This field is too short (minimum is %d characters).", d))
 	}
 }
 
